@@ -1,1 +1,1 @@
-export const REACT_APP_API_URL = "https://api.zee.im"
+export const REACT_APP_API_URL = "http://localhost:4001"
