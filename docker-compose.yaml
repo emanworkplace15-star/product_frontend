@@ -1,16 +1,25 @@
-services:
-  product_frontend:
-    image: product_frontend:latest
-    container_name: product_frontend
-    restart: always
-    build: .
-    ports:
-      - "3005:3000"  # host:container
-    environment:
-      - NODE_ENV=production
-    networks:
-      - webproxy
+# services:
+#   product_frontend:
+#     image: product_frontend:latest
+#     container_name: product_frontend
+#     restart: always
+#     build: .
+#     ports:
+#       - "3005:3000"  # host:container
+#     environment:
+#       - NODE_ENV=production
+#     networks:
+#       - webproxy
 
-networks:
-  webproxy:
-    external: true
+# networks:
+#   webproxy:
+#     external: true
+
+
+services:
+  product:
+    image: "product_frontend:${BRANCH}-latest"
+    container_name: "product_frontend_${BRANCH}"
+    ports:
+      - "172.17.0.1:${EXT_PORT}:${APP_PORT}"
+    restart: always
