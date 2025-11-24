@@ -54,7 +54,7 @@ pipeline {
 
                     // Deploy
                     sh """
-                        docker compose --env-file .env up -d --force-recreate
+                        docker compose up -d --force-recreate
                     """
                 }
             }
