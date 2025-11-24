@@ -2,7 +2,7 @@ pipeline {
     agent { label 'jenkins_node' }
 
     environment {
-        APP_PORT = "4000"
+        APP_PORT = "3000"
       
         DOCKER_REPO = "emman159/product_frontend"
     }
