@@ -14,19 +14,19 @@ pipeline {
                 script {
 
                     def BRANCH = env.BRANCH_NAME
-                    def EXT_PORT = 9090
+                    def EXT_PORT = 7070
                     def VERSION_TAG = "${BRANCH}-${BUILD_NUMBER}" // second tag
 
                     echo "Building for branch: ${BRANCH}"
 
                     if (BRANCH == 'main') {
-                        EXT_PORT = 4001
+                        EXT_PORT = 3000
                     } else if (BRANCH == 'development') {
-                        EXT_PORT = 7076
+                        EXT_PORT = 7071
                     } else if (BRANCH == 'staging') {
-                        EXT_PORT = 7077
+                        EXT_PORT = 7078
                     } else {
-                        EXT_PORT = 8089
+                        EXT_PORT = 8090
                     }
 
                     sh """
